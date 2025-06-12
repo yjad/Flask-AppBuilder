@@ -25,7 +25,10 @@ class EmployeeView(ModelView):
         "department": QuerySelectField(
             "Department",
             query_func=department_query,
-            widget=Select2Widget(extra_classes="readonly"),
+            widget=Select2Widget(),
+            get_pk_func=lambda d: d.id,
+            widget=Select2Widget(), 
+            render_kw={"disabled": "disabled"}),
         )
     }
 
