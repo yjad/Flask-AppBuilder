@@ -178,6 +178,7 @@ Readonly select fields are a special case, but it's solved in a simpler way::
             'department':  QuerySelectField(
                                 'Department',
                                 query_func=department_query,
+                                get_pk_func=lambda x: x.id,
                                 widget=Select2Widget(extra_classes="readonly")
                            )
         }
